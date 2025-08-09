@@ -5,7 +5,7 @@ import 'remixicon/fonts/remixicon.css';
 import NotFound from "./not-found";
 import ThemeProviders from "./themeprovider";
 
-import { ErrorBoundary } from "next/dist/client/components/error-boundary";
+import { ErrorBoundary } from "react-error-boundary";
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],

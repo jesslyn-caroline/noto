@@ -1,7 +1,7 @@
 'use client'
 
 import { useTheme } from 'next-themes';
-import React, { useState } from 'react'
+import React from 'react'
 
 export default function ModeButton() {
 

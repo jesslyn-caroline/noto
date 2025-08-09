@@ -29,10 +29,9 @@ export default function SideBar({children} : {children: React.ReactNode}) {
           <i className={`ri-menu-fold-line text-xl`} />
         </button> 
         {
-          ...paths.map((route) => {
-            console.log(route.path === pathName);
+          ...paths.map((route, index) => {
             return (
-              <Link href={route.path} className={`flex gap-x-5 items-center py-1`}>
+              <Link href={route.path} className={`flex gap-x-5 items-center py-1`} key={index}>
                 <span className={`text-sm w-fit ${route.path === pathName ? 'font-semibold' : 'font-normal'}`}>{route.name}</span>
               </Link>
             )

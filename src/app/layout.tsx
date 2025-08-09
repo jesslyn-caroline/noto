@@ -2,12 +2,10 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import 'remixicon/fonts/remixicon.css';
 
-import NavBar from "./components/navbar";
 import NotFound from "./not-found";
 import ThemeProviders from "./themeprovider";
 
 import { ErrorBoundary } from "next/dist/client/components/error-boundary";
-import SideBar from "./components/sidebar";
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],

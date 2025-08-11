@@ -10,8 +10,9 @@ export default function SideBar({children} : {children: React.ReactNode}) {
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const toggleSideBar = ():void => {
-      setIsOpen(!isOpen);
+  const toggleSideBar = (value: boolean):void => {
+      console.log("Hi")
+      setIsOpen(value);
   }
 
   const pathName = usePathname();
@@ -23,9 +24,9 @@ export default function SideBar({children} : {children: React.ReactNode}) {
 
   return (
     <div className={`w-full h-full flex flex-row transition-all `}>
-      <div className={`${isOpen? 'block lg:hidden' : 'hidden'} translate-0 fixed w-full h-full bg-black opacity-50 z-10`}></div>
-      <div className={`${isOpen? 'translate-x-0 visible' : '-translate-x-full invisible'} fixed px-5 py-1 bg-background min-w-52 w-52 h-full z-20 border-r-1 border-r-gray-200 flex flex-col items-start transition-all`}>
-        <button title={`${isOpen? 'Close Menu' : 'Open Menu'}`} onClick={toggleSideBar}>
+      <div className={`${isOpen? 'flex lg:hidden' : 'hidden'} translate-0 fixed w-full h-full bg-black opacity-50`} onClick={() => toggleSideBar(false)}></div>
+      <div className={`${isOpen? 'translate-x-0 visible' : '-translate-x-full invisible'} fixed px-5 py-1 bg-background min-w-52 w-52 h-full z-10 border-r-1 border-r-gray-200 flex flex-col items-start transition-all`}>
+        <button title={`${isOpen? 'Close Menu' : 'Open Menu'}`} onClick={() => toggleSideBar(false)}>
           <i className={`ri-menu-fold-line text-xl`} />
         </button> 
         {
@@ -41,7 +42,7 @@ export default function SideBar({children} : {children: React.ReactNode}) {
       </div>
       <div className={`${isOpen? 'hidden lg:block' : 'hidden'} min-w-52 w-52`}></div>
       <div className={`w-full h-full`}>
-        <NavBar isOpen={isOpen} toggleSideBar={toggleSideBar} />
+        <NavBar isOpen={isOpen} toggleSideBar={(value) => toggleSideBar(value)} />
         { children }
       </div>
     </div>

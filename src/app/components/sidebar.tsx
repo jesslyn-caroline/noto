@@ -39,7 +39,7 @@ export default function SideBar({children} : {children: React.ReactNode}) {
         }
         <ModeButton />
       </div>
-      <div className={`${isOpen? 'block' : 'hidden'} min-w-52 w-52`}></div>
+      <div className={`${isOpen? 'block lg:hidden' : 'hidden'} min-w-52 w-52`}></div>
       <div className={`w-full h-full`}>
         <NavBar isOpen={isOpen} toggleSideBar={toggleSideBar} />
         { children }
